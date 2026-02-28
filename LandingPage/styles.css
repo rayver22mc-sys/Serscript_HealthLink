@@ -1,0 +1,255 @@
+:root {
+    --cyan: #0CEFEA;
+    --yellow: #FFC800;
+    --dark-header: #1C3B4A;
+    --dark-bg: #234A5A;
+    --card-bg: #2E5B6D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+}
+
+/* ------- Frame 1 ------- */
+/* ------- Header ------- */
+
+header {
+    background-color: var(--dark-header);
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.heart-icon {
+    font-size: 26px;
+    color: var(--cyan);
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+/* ------- Nav Bar ------- */
+
+.nav-buttons a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.btn-outline {
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 10px 22px;
+}
+
+.btn-outline.large {
+    padding: 14px 28px;
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    color: black;
+    padding: 14px 28px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-yellow.small {
+    padding: 10px 22px;
+}
+
+/* ------- Body ------- */
+
+.content {
+    position: relative;
+    padding: 50px 80px 120px 80px;
+    overflow: hidden;
+}
+
+.content::after {
+    content: "";
+    position: absolute;
+    width: 850px;
+    height: 850px;
+    right: -250px;
+    top: -200px;
+    background: radial-gradient(
+        circle,
+        rgba(12, 239, 234, 0.18) 0%,
+        rgba(12, 239, 234, 0.08) 40%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.content-info {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+}
+
+.tagline {
+    display: inline-block;
+    border: 1px solid var(--cyan);
+    padding: 10px 18px;
+    font-size: 18px;
+    color: var(--cyan);
+    margin-bottom: 30px;
+}
+
+.content h1 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.content h1 span {
+    color: var(--cyan);
+}
+
+.description {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #B7D6DE;
+    margin-bottom: 40px;
+}
+
+.content-buttons {
+    display: flex; 
+    gap: 30px;         
+    margin-bottom: 80px;
+}
+
+.stats {
+    display: flex;
+    gap: 120px;
+}
+
+.stats h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--cyan);
+}
+
+.stats p {
+    font-size: 18px;
+    color: #A8C4CC;
+}
+
+/* ------- Frame 2 ------- */
+
+.features {
+    padding: 50px 80px;
+    text-align: center;
+    
+}
+
+.features h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #BFD9E2;
+    margin-bottom: 60px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+}
+
+.icon-box img {
+    max-width: 70%;  
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.icon-box.cyan {
+    background-color: var(--cyan);
+    color: black;
+}
+
+.icon-box.yellow {
+    background-color: var(--yellow);
+    color: black;
+}
+
+.card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #C5DDE5;
+}
+
+.cta-box {
+    margin-top: 80px;
+    padding: 60px;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cta-box h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    color: #C5DDE5;
+    margin-bottom: 30px;
+}
