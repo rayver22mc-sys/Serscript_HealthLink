@@ -1,0 +1,81 @@
+body{
+    margin: 0px;
+    background-color: #083C52;
+
+    /* Font */
+    color: white;
+    font-size: 30px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+header{
+    background-color: #062B3C;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+.section1{
+    margin: 30px;
+    padding-bottom: 10px;
+    }
+
+.section2{
+    display: flex;
+    margin: 30px 30px;
+    justify-content: space-between;
+    }
+
+.section3{
+        display: flex;
+        margin: 30px 30px;
+        justify-content: space-around;
+    }
+
+/* Section 1 */
+.statuscard1{
+    width: 300px;
+    height: 200px;
+    background-color: rgba(0, 218, 255, 35%);
+    padding: 15px;
+    border: #00DAFF solid 1px;
+    }
+.statuscard2{
+    width: 300px;
+    height: 200px;
+    background-color: 	rgba(255, 200, 0, 35%);
+    padding: 15px;
+    border: #00DAFF solid 1px;
+    }
+
+
+/* progress bar */
+.progress{
+    width: 90%;
+    height: 8px;
+    margin-top: 30px;
+    background-color: 	rgba(217, 217, 217, 22%);
+    overflow: hidden;
+    }
+.progress__fill{
+    height: 100%;
+    width: 100%;
+    background-color: #FFC800;
+    }
+
+
+
+.cardStatus{
+    font-size: 30px; 
+    margin-bottom: 0px;
+    }
+.cardStatusDescription{
+    font-size: 12px;
+    }
+.miniStatus{
+    font-size:20px; 
+    margin-top: 8px;
+    }
