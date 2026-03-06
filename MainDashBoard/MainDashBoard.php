@@ -90,14 +90,19 @@
 
     <div class="section3">
         <div class="section3cards">
-            <p class="section3cardname">Today's Exercise Schedule</p>
+            <p class="section3cardname"><b>Today's Exercise Schedule</b></p>
         </div>
 
         <div class="section3cards">
-            <p class="section3cardname">Calories & Diet Tracking</p>
+            <p class="section3cardname"><b>Calories & Diet Tracking</b></p>
+            <div class="caloriesCard"></div>
+            <div class="caloriesCard"></div>
+            <div class="caloriesCard"></div>
         </div>
     </div>
 
     <script src="MainDashBoard.js"></script>
 </body>
 </html>
+
+
