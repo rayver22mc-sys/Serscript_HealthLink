@@ -69,7 +69,7 @@
     <div class="formDiv">
         <!-- Log In form -->
         <div class="loginDiv">
-            <form action="MainDashBoard.php" method="post">
+            <form action="MainDashBoard.php" method="post"> <!-- This is connected to the dashboard -->
                 <input type="text" name="User" placeholder="Username" required>
                 <br />
                 <input type="password" name="Password" placeholder="Password" required>
@@ -84,13 +84,10 @@
 
         <!-- Register Form -->
          <div class="registerFormDiv">
-             <form action="MainDashBoard.php" method="post">
-                 <input type="text" name="Email" placeholder="Email" required>
-                 <br />
-                 <input type="text" name="User" placeholder="Username" required>
-                 <br />
-                 <input type="password" name="Password" placeholder="Password" required>
-                 <br />
+             <form action="MainDashBoard.php" method="post"> <!-- This is connected to the dashboard -->
+                 <input type="text" name="Email" placeholder="Email" required><br />
+                 <input type="text" name="User" placeholder="Username" required><br />
+                 <input type="password" name="Password" placeholder="Password" required><br />
                  <input type="submit">
              </form>
          </div>
