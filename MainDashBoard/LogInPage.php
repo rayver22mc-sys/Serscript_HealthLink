@@ -28,31 +28,74 @@
 
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            align-content: center;
             }
 
-        .LoginDiv{
+        .formDiv{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            background-color: 	rgba(217, 217, 217, 20%);
+
+            border-radius: 25px;
+
+            height: 320px;
+            width: 300px;
+            margin: 20px 40%;
+            }
+
+        .loginDiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            }
+
+        .registerFormDiv{
+
+            /* Add height width to keep the size of the form constant */
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="heart-icon"><img src="assets/heart.png" alt="Heart Icon"></div>
         <h1 style="font-size: 35px; margin: 0px;">Health<span style="color: #0CEFEA;">Link</span></h1>
     </header>
 
-    <div class="LoginDiv">
-        <div>
-            <h5>Log In</h5>
+    
+    <div class="formDiv">
+        <!-- Log In form -->
+        <div class="loginDiv">
+            <form action="MainDashBoard.php" method="post">
+                <input type="text" name="User" placeholder="Username" required>
+                <br />
+                <input type="password" name="Password" placeholder="Password" required>
+                <br />
+                <input type="checkbox" name="rememberMe" value="remember">
+                 <label for="rememberMe"> Remember me?</label> <!-- fix font -->
+                <br>
+                <input type="submit">
+            </form>
         </div>
-        <form action="MainDashBoard.php" method="post">
-            <label for="Name"></label>
-            <input type="text" name="User" required>
-            <input type="submit" name="" id="">
-        </form>
+        
+
+        <!-- Register Form -->
+         <div class="registerFormDiv">
+             <form action="MainDashBoard.php" method="post">
+                 <input type="text" name="Email" placeholder="Email" required>
+                 <br />
+                 <input type="text" name="User" placeholder="Username" required>
+                 <br />
+                 <input type="password" name="Password" placeholder="Password" required>
+                 <br />
+                 <input type="submit">
+             </form>
+         </div>
+
     </div>
+
 </body>
 </html>

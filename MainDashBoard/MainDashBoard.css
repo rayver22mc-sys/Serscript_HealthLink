@@ -41,14 +41,15 @@ header{
     height: 200px;
     background-color: rgba(0, 218, 255, 35%);
     padding: 15px;
-    border: #00DAFF solid 1px;
+    border: rgba(0, 218, 255, 70%) solid 1px;
     }
+    
 .statuscard2{
     width: 300px;
     height: 200px;
-    background-color: 	rgba(255, 200, 0, 35%);
+    background-color: rgba(255, 200, 0, 20%);
     padding: 15px;
-    border: #00DAFF solid 1px;
+    border: rgba(0, 218, 255, 50%) solid 1px;
     }
 
 
@@ -57,7 +58,7 @@ header{
     width: 90%;
     height: 8px;
     margin-top: 30px;
-    background-color: 	rgba(217, 217, 217, 22%);
+    background-color: rgba(217, 217, 217, 22%);
     overflow: hidden;
     }
 .progress__fill{
@@ -79,3 +80,14 @@ header{
     font-size:20px; 
     margin-top: 8px;
     }
+.section3cards{
+    background-color: 	rgba(6, 37, 42, 50%);
+    border: rgba(0, 218, 255, 50%) solid 1px;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    height: 500px;
+    width: 600px;
+    }
+    
