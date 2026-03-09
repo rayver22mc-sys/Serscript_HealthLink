@@ -1,0 +1,19 @@
+body{
+    background-color: skyblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formDiv{
+    display: block;
+}
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#registrationForm{
+    display: block;
+}
