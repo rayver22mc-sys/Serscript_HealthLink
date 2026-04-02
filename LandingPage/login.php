@@ -1,3 +1,11 @@
+<!-- 
+Notice delete after reading
+context: 
+This code is from your LoginPage logic with css you can go over it and improve or fix it  
+This has internal css n under landing page for now (for convinience)
+add ur chnage make sure i didnt delete anything from ur code then
+I'll move this file to LogInPage Folder and make it external css   
+-->
 <?php
 // include("../DataBase/dataBaseConnection.php");
 
