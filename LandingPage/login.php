@@ -1,18 +1,63 @@
 <?php
+// include("../DataBase/dataBaseConnection.php");
+
 $message = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['action']) && $_POST['action'] == 'login') {
-        $email = $_POST['email'] ?? '';
-        $message = "Login attempted for: " . htmlspecialchars($email);
-    } elseif (isset($_POST['action']) && $_POST['action'] == 'register') {
-        $username = $_POST['username'] ?? '';
-        $pass = $_POST['password'] ?? '';
-        $conf = $_POST['confirm_password'] ?? '';
-        
-        if ($pass !== $conf) {
+    $action = $_POST['action'] ?? '';
+
+    // Register
+    if ($action == 'register') {
+        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+        $password = $_POST['password'];
+        $confirm = $_POST['confirm_password'];
+
+        if (empty($username) || empty($password)) {
+            $message = "Please fill in all fields.";
+        } elseif ($password !== $confirm) {
             $message = "Error: Passwords do not match!";
         } else {
-            $message = "Registration attempted for: " . htmlspecialchars($username);
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO users (user, password, email) VALUES (?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $sql);
+            
+            if ($stmt) {
+                mysqli_stmt_bind_param($stmt, "sss", $username, $hash, $email);
+                try {
+                    mysqli_stmt_execute($stmt);
+                    $message = "Account Registered Successfully!";
+                } catch (mysqli_sql_exception $e) {
+                    $message = "Error: Username or Email is already taken.";
+                }
+                mysqli_stmt_close($stmt);
+            }
+        }
+    }
+
+    // Login
+    elseif ($action == 'login') {
+        $user_input = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
+        $password_input = $_POST['password'];
+
+        $sql = "SELECT * FROM users WHERE email = ? OR user = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "ss", $user_input, $user_input);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($row = mysqli_fetch_assoc($result)) {
+                if (password_verify($password_input, $row["password"])) {
+                    $message = "Login successful! Welcome " . $row['user'];
+                } else {
+                    $message = "Incorrect Password.";
+                }
+            } else {
+                $message = "User not found.";
+            }
+            mysqli_stmt_close($stmt);
         }
     }
 }
@@ -158,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-
+    <!----- Header ----->
     <header>
         <div class="logo">
             <div class="heart-icon"><img src="assets/heart.png" alt="Heart Icon"></div>
@@ -174,19 +219,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="box-body" id="box-body">
-                <!-- Login Form -->
+                <!----- Login Form ----->
                 <div id="form-login" class="form-content">
-                    <form method="POST">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <input type="hidden" name="action" value="login">
-                        <div class="input-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                        <div class="input-group"><input type="text" name="email" placeholder="Username or Email" required></div>
                         <div class="input-group"><input type="password" name="password" placeholder="Password" required></div>
                         <button type="submit" class="btn-submit">LOG IN</button>
                     </form>
                 </div>
 
-                <!-- Register Form -->
+                <!----- Register Form ----->
                 <div id="form-register" class="form-content hidden">
-                    <form method="POST" onsubmit="return validatePasswords()">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" onsubmit="return validatePasswords()">
                         <input type="hidden" name="action" value="register">
                         <div class="input-group"><input type="text" name="username" placeholder="Username" required></div>
                         <div class="input-group"><input type="email" name="email" placeholder="Email Address" required></div>
@@ -200,7 +245,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <script>
-        // Trigger window prompt if PHP message exists
         <?php if(!empty($message)): ?>
             alert("<?php echo addslashes($message); ?>");
         <?php endif; ?>
@@ -224,10 +268,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById('tab-login').classList.toggle('active', isLogin);
             document.getElementById('tab-register').classList.toggle('active', !isLogin);
             
-            // Seamless tab transition
             document.getElementById('box-body').style.borderRadius = isLogin ? '0 16px 16px 16px' : '16px 0 16px 16px';
 
-            // Login and Register Animation
             if (isLogin) {
                 root.style.setProperty('--circle-top', 'auto');
                 root.style.setProperty('--circle-bottom', '-350px');
