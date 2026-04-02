@@ -82,10 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .brand { font-size: 22px; font-weight: 600; }
         .cyan { color: var(--cyan); }
 
-        .nav-buttons a { text-decoration: none; margin-left: 20px; font-weight: 600; }
-        .btn-outline { border: 1px solid var(--cyan); color: var(--cyan); padding: 10px 22px; border-radius: 4px; }
-        .btn-yellow.small { background-color: var(--yellow); color: black; padding: 10px 22px; border-radius: 4px; }
-
         .auth-container {
             flex-grow: 1;
             display: flex;
@@ -167,10 +163,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="logo">
             <div class="heart-icon"><img src="assets/heart.png" alt="Heart Icon"></div>
             <div class="brand">Health<span class="cyan">Link</span></div>
-        </div>
-        <div class="nav-buttons">
-            <a href="#" class="btn-outline">Sign up</a>
-            <a href="#" class="btn-yellow small">Login</a>
         </div>
     </header>
 
