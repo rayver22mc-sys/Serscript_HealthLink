@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             --yellow: #FFC800;
             --dark-header: #062B3C;
             --dark-bg: #083C52;
-            /* Made the card background more transparent */
             --card-bg: rgba(255, 255, 255, .10); 
             
             --circle-top: auto;
