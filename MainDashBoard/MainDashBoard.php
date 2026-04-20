@@ -24,10 +24,10 @@
 <body>
     
     <?php 
-        if($_POST["User"] == ""){
+        if($_POST["Name"] == ""){
             $user = "John Doe";
         }else{
-            $user = $_POST["User"];
+            $user = $_POST["Name"];
         }
     ?>
 

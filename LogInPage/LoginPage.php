@@ -7,10 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HealthLink: Login</title>
+    <!-- <link rel="stylesheet" href="LoginPage.css"> -->
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+
+<!-- Login Form -->
+    <form action="../MainDashBoard/MainDashBoard.php" method="post">
         <h1>Login</h1><br>
         <label for="name">Name: </label>
         <input type="text" name="Name">
@@ -21,9 +24,10 @@
         <input type="submit" name="Login" value="Login">
     </form>
 
+<!-- Register Form -->
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
         <h1>Registration</h1><br>
-        <label for="name">Name: </label>
+        <label for="Name">Name: </label>
         <input type="text" name="Name">
         <br>
         <label for="password">Password:</label>
@@ -34,22 +38,25 @@
         <br>
         <input type="submit" name="Register" value="Register">
     </form>
+    <script src="LoginPage.js"></script>
 </body>
 </html>
 
 <?php
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $name = filter_input(INPUT_POST, "Name", FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
-    //register
+    //register button is pressed
         if(isset($_POST['Register'])){
             if(empty($name)){echo"Enter Name";}
             elseif(empty($password)){echo"Enter Password";}
             else{
                 $hash= password_hash($password, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO users (user, password) VALUES ('$name', '$$hash')";  
+                $sql = "INSERT INTO users (user, password) VALUES ('$name', '$hash')";  
 
+            //checks if name is taken
                 try{
                     mysqli_query($conn, $sql);
                     echo "Acc Registered";
@@ -58,6 +65,7 @@
             }
         }
 
+    //Login button is pressed
         if(isset($_POST['Login'])){
             $sql = "SELECT * FROM users Where user = '$name'";
             $result = mysqli_query($conn, $sql);
@@ -71,5 +79,7 @@
             }
         }
     }
-    mysqli_close($conn);
+    try{
+        mysqli_close($conn);
+    }catch(TypeError){}
 ?>
