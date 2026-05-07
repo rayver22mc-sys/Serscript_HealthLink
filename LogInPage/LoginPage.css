@@ -1,0 +1,194 @@
+:root {
+    --cyan: #0CEFEA;
+    --yellow: #FFC800;
+    --dark-header: #062B3C;
+    --dark-bg: #083C52;
+    --card-bg: rgba(255, 255, 255, .10);
+    
+    --circle-top: auto;
+    --circle-bottom: -350px;
+    --circle-left: -350px;
+    --circle-right: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--dark-bg);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    top: var(--circle-top);
+    bottom: var(--circle-bottom);
+    left: var(--circle-left);
+    right: var(--circle-right);
+    background-color: rgba(12, 239, 234, 0.12);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    transition: all 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+header {
+    background-color: var(--dark-header);
+    padding: 25px 115px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.heart img {
+    width: 40px;
+    height: auto;
+    display: block;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.formContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.formStyle {
+    width: 100%;
+    max-width: 480px;
+}
+
+.tabs {
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.tab {
+    flex: 1;
+    padding: 16px 20px;
+    background: transparent;
+    border: none;
+    color: #C5DDE5;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px 16px 0 0;
+    color: white;
+}
+
+.boxStyle {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 0 16px 16px 16px;
+    position: relative;
+    z-index: 1;
+    transition: border-radius 0.5s ease;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--cyan);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.submitButton {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cyan);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.submitButton:hover {
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+    .boxStyle {
+        padding: 30px 25px;
+    }
+    .brand {
+        font-size: 20px;
+    }
+    .heart-icon img {
+        width: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab {
+        font-size: 12px;
+        padding: 12px;
+    }
+    .boxStyle {
+        padding: 25px 20px;
+    }
+    input {
+        padding: 12px;
+    }
+}
