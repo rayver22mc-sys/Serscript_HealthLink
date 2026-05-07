@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    }   
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    font-family: "Inter", sans-serif;
+            
+    background-color: #083C52;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    }
+header {
+    background-color: #062B3C;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    }
+
+main {
+    padding: 0px 30px;
+    }
+
+/* Logo */
+.logo {
+    
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    }
+.logo img{
+    height: auto;
+    display: block;
+    }
+.logo p{
+    color:white;
+    }  
+    
+/* Main */
+.tagLine{
+    font-size: 60px; 
+    margin-left: 40px; 
+    margin-top: 10px
+}
+.roundImage{
+    margin-top: 30px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    float: right;
+}
+
+.buttonContainer {
+    margin: 120px 50px;
+}
+.buttonContainer button{
+    padding: 12px 30px;
+    font-weight: 1000;
+}
+
+
+.getStartedButton{
+    background-color: #FFC800;
+    color: #654300;
+}
+.getStartedButton:hover{
+    border: #FFC800 solid 2px;
+    color: white;
+}
+.getStartedButton:active{
+    padding: 8px 26px;
+}
+
+
+.learnMoreButton {
+    background-color: transparent;
+    color: #18C6E4;
+    border: #18C6E4 solid 2px;
+}
+.learnMoreButton:hover{
+    background-color: #18C6E4;
+    color: white;
+}
+.learnMoreButton:active {
+    padding: 8px 26px;
+}
+
+
+.coursesDiv{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    place-items: center;
+    margin-top: 30px;
+}
+.coursesDiv div{
+    background-color: #0A242F;  
+    padding: 10px 0px;
+    border-radius: 10px; 
+}
+
+
+/* filter */
+.desktopFilterSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    float: left;
+    background-color: #0A242F;
+    padding: 10px;
+    border-radius: 15px;
+}
+.desktopFilterSection button{
+    border: none;
+    background-color: transparent;
+
+    font-size: 25px;
+    color: #18C6E4;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+.filter1{display: none;}
+.filter2{display: none;}
+.desktopFilterSection button:hover{
+    cursor: pointer;
+}
+.filter1 button, .filter2 button{
+    border: none;
+    background-color: transparent;
+
+    font-size: 25px;
+    color: #18C6E4;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+/* Desktop */
+.desktopNavButtons {
+    padding: 10px;
+}
+.desktopNavButtons a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0px 10px;
+
+    font-size: 20px;
+    color: #18C6E4;
+}
+.desktopNavButtons a.Active {
+    color: white;
+    background-color: #083C52;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* phone */
+#phoneNavButton{
+    display: none;
+}
+.phoneMenuBar{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: #031D29;
+    padding: 10px;
+}
+.phoneMenuBar a {
+    text-decoration: none;
+    color: #18C6E4;
+    padding: 8px 15px;
+}
+.phoneMenuBar a.Active{
+    color: white;
+    background-color: #083C52;
+    border-radius: 5px;
+}
+
+.mobileFilterSection{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #0A242F;
+    padding: 10px;
+    border-radius: 15px;
+}
+@media(max-width: 651px){
+    header{
+        padding: 10px 20px;
+    }
+    #desktopNavButtons{
+        display: none;
+    }
+    #phoneNavButton{
+        display: block;
+    }
+
+    .logo img{
+        width: 40px;
+    }
+
+    /* Main */
+    .roundImage{display: none;}
+    .desktopFilterSection{display: none;}
+    main{padding: 0px; margin: 0px  ;}
+    .tagLine{
+        font-size: 40px; 
+        margin-left: 20px; 
+        margin-top: 0px
+        }
+    .buttonContainer {
+        margin: 20px 20px;
+        }
+
+    .buttonContainer button{
+        padding: 6px 18px;
+        font-weight: 1000;
+        }
+    .mobileFilterSection{
+        display: flex;
+    }
+    .coursesDiv{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}

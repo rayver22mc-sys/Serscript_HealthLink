@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+    }   
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: "Inter", sans-serif;
+    background-color: #083C52;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    }
+body::after {
+    content: "";
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    right: -250px;
+    top: -200px;
+    background-color: #0CEFEA; 
+    opacity: 0.1; 
+    border-radius: 50%;
+    z-index: 0; 
+    pointer-events: none; /*allow to click through buttons*/
+}
+main{
+    margin: 60px 80px;
+    }
+header {
+    background-color: #062B3C;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    }
+.desktopNavButtons {
+    padding: 10px;
+}
+.desktopNavButtons a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0px 10px;
+    font-size: 20px;
+}
+
+/* Logo */
+.logo {    
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    }
+.logo img{
+    height: auto;
+    display: block;
+    }
+.logo p{
+    color:white;
+    }  
+.signUpButton{
+    border: 1px solid #0CEFEA;
+    color: #0CEFEA;
+}
+
+/* Section 1 */
+.tagLine{
+    font-size: 20px;
+    padding: 15px;
+    border: 1px solid #0CEFEA;
+    color: #0CEFEA;
+    width: 25%;
+    text-justify: justify;
+}
+
+.heroTitle{
+   font-size: 60px; 
+   margin: 0px;
+    font-weight: 900;
+}
+.heroTitle span{
+    color: #0CEFEA;
+}
+.supportingText{
+    color: #B7D6DE;
+    line-height: 1.5;
+}
+.ctaButtons{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    padding: 20px;
+    z-index: 1; 
+}
+.ctaButtons a{
+    padding: 10px;
+    cursor:pointer;
+    text-decoration: none;
+    padding: 20px 30px;
+}
+.getStartedButton{
+    background-color: #FFC800;
+    color: black;
+    font-weight: 700;
+}
+.learnMoreButton {
+    border: 2px solid #0CEFEA;
+    color: #0CEFEA;
+    background-color: transparent;
+}
+.learnMoreButton:hover{
+    background-color: #0CEFEA;
+    color: black;
+}
+
+/* Section 2 */
+.dataSection{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+    margin-top: 60px;
+}
+
+.dataSection > div > p{
+    color: #0CEFEA;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px ;
+}
+
+.dataSection > div > p > span {
+    color: white;
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.section2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 250px;
+}
+.section2 h1{
+    margin: 0px;
+    padding: 0px;
+    font-size: 50px;
+}
+.section2 p {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    padding: 0px;
+}
+
+.featureList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: auto;
+    gap: 10px;
+    place-items: center;
+}
+
+.featureItem{
+    display: flex;
+    background-color: #2E5B6D;
+    height: 100px;
+    width: 450px;
+    
+    justify-content: start; 
+    align-items: center; 
+}
+.featureItem > img {
+    width: 80px;
+    height: 80px;
+    margin: 0px 10px;
+    background-color: #FFC800;
+    padding: 10px;
+}
+.featureItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.featureItemText h2{
+    padding: 0px;
+    margin: 0px;
+}
+.featureItemText p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.featureItem:nth-child(odd) > img {
+    background-color: #0CEFEA;
+}
+
+.cta-box {
+    margin-top: 80px;
+    padding: 60px;
+    background-color: #2E5B6D;
+    border: 1px solid rgba(255,255,255,0.1);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-box a {
+    padding: 10px;
+    cursor:pointer;
+    text-decoration: none;
+    padding: 20px 30px;
+}
+
+.cta-box h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* phone */
+#phoneNavButton{
+    display: none;
+    padding: 10px;
+}
+.phoneMenuBar{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+        
+    background-color: #031D29;
+    padding: 10px;
+}
+.phoneMenuBar a {
+    text-decoration: none;
+    color: #18C6E4;
+    padding: 8px 0px;
+    font-size: 10px;
+}
+.phoneMenuBar a.Active{
+    color: white;
+    background-color: #083C52;
+    border-radius: 5px;
+}
+.loginButton {
+    background-color: #FFC800;
+    color: black;
+    padding: 14px 28px;
+    font-weight: 800;
+}
+
+
+@media(max-width: 651px){
+    header{
+        padding: 10px 15px;
+    }
+    #desktopNavButtons{
+        display: none;
+    }
+    #phoneNavButton{
+        display: block;
+    }
+        
+    .logo img{
+        width: 40px;
+    }
+
+
+    main{margin: 10px 20px;}
+
+    /* section 1 */
+    .tagLine{
+        font-size: 10px;
+        font-size: 15px;
+        padding: 5px;
+        width: 70%;
+        }
+    .heroTitle{font-size: 30px;}
+    .supportingText{
+        font-size: 10px;
+        line-height: 1.2;
+        }
+    .ctaButtons {
+        padding: 2px;
+    }
+    .ctaButtons a{
+        text-decoration: none;
+        padding: 10px;
+    }
+    .dataSection{
+        column-gap: 10%;
+        margin-top: 20px;
+    }
+    .dataSection > div > p{
+        color: #0CEFEA;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 0px;
+        margin: 0px ;
+    }
+    .dataSection > div > span {
+        color: white;
+        font-size: 12px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* Section 2 */
+    .section2 {
+        margin-top: 150px;
+    }
+    .section2 h1 {
+        font-size: 30px;
+    }
+    .section2 p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0px;
+}
+
+    .featureList{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        place-items: center;
+        margin: 0px;
+    }
+    .featureItem{
+        display: flex;
+        background-color: #2E5B6D;
+        padding: 5px;
+        gap: 5px;
+        width: 100%;
+    }
+    .featureItemText h2{
+    font-size: 20px;
+    }
+    .featureItemText p{
+        padding: 0px;
+        margin: 0px;
+    }
+    .cta-box {
+        margin-top: 10px;
+        padding: 10px 20px 60px 20px;
+    }
+    .cta-box h2 {
+        font-size: 30px;
+    }
+    .cta-box p {
+        font-size: 15px;
+    }
+}

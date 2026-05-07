@@ -29,6 +29,8 @@
         }else{
             $user = $_POST["User"];
         }
+
+        $user = $_POST['User'] ?? "";
     ?>
 
     <header>
