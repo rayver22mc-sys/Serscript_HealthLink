@@ -5,17 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthLink: Landing Page</title>
-    <link rel="stylesheet" href="landingPage.css">
+    <link rel="stylesheet" href="src/LandingPage/landingPages.css">
 
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- external css test--> 
     <link rel="stylesheet" href="src/landingPage/landingPages.css">
-
-    <style>
-        
-    </style>
 </head>
 <body>
     <header>

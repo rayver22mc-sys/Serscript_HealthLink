@@ -93,7 +93,7 @@ if (isset($conn) && $conn instanceof mysqli) {
 <body>
     <header>
         <div class="logo">
-            <div class="heart"><img src="assets/heart.png" alt="Heart Icon"></div>
+            <div class="heart"><img src="../assets/heart.png" alt="Heart Icon"></div>
             <div class="brand">Health<span class="cyan">Link</span></div>
         </div>
     </header>
