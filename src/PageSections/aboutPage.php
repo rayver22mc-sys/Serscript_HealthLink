@@ -38,7 +38,6 @@
         <a href="../../indexss.php">Logout</a>
     </div>
 
-
     <div class="section1">
         <h1>About Us</h1>
     </div >
@@ -76,7 +75,16 @@
                 <p>Full stack Developer</p>
             </div>
         </div>
+        <br>
     </section>
+    
+    <div style="background-color:#062B3C; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 300px;" class="section1">
+        <h1>Our Mission</h1>
+    </div >
+    <div column; justify-content: center; align-items: center; height: 300px;>
+        <p style="text-align: center; font-size: 30px;"><br><br>To empower users to take control of their physical and mental health through a user-friendly, one platform open‑source <br> web system to schedule exercises, view previous exercises, and browse credible health related articles.</p>
+    </div>
+    
     <footer>
         <div>
             <h2>HealthyLivingTeam</h2>
