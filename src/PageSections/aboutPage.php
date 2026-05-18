@@ -55,7 +55,7 @@
             </div>
         </div>
         <div>
-            <img src="../assets/Hamsirani_ProfilePicture.jpg" alt="An image of Rayver Hamsirani" height="350px" >
+            <img src="../assets/Ku_ProfilePicture.jpeg" alt="An image of Rayver Hamsirani" height="350px" width="350px" >
             <div>
                 <h2>Beatriz Mae Ku</h2>
                 <p>Full stack Developer</p>
