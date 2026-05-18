@@ -135,16 +135,6 @@ if (isset($conn) && $conn instanceof mysqli) {
             </div>
         </div>
     </div>
-    <footer>
-        <div>
-            <h2>HealthyLivingTeam</h2>
-        </div>
-        <div>
-            <p style="text-decoration:underline;">Contact Information</p>
-            <p>+63 947 564 6767</p>
-            <a href="mailto:HealthyLivingTeam@gmail.com" style="color: white;">HealthyLivingTeam@gmail.com</a>
-        </div>
-    </footer>
     <script>
         
         function validatePasswords() {

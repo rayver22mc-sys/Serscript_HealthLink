@@ -38,7 +38,7 @@
     </div>
 
     <main>
-        <img src="../assets/CoursePageImage.png" alt="test" class="roundImage">
+        <!-- <img src="../assets/CoursePageImage.png" alt="test" class="roundImage"> -->
         <div style="display:flex; margin-top: 70px;">
             <div class="desktopFilterSection">
                 <!-- filter 1 -->
@@ -55,10 +55,10 @@
             </div>
             <div>
                 <h1 class="tagLine">Explore Top Articles</h1>
-                <div class="buttonContainer">
+                <!-- <div class="buttonContainer">
                     <button class="getStartedButton">GET STARTED</button>
                     <button class="learnMoreButton">LEARN MORE</button>
-                </div>
+                </div> -->
             </div>
         </div>
 
