@@ -33,7 +33,7 @@
     </header>
 
     <!-- Phone Menu Bar -->
-    <div class="phoneMenuBar" id="phoneMenuBar">
+    <div class="phoneMenuBar" id="phoneMenuBar" style="display: block;">
         <a href="src/PageSections/login.phptab=register">Sign up</a>
         <a href="src/PageSections/login.php">Login</a>
     </div>
