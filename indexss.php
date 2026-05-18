@@ -10,9 +10,8 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <style>
-        
-    </style>
+    <!-- external css test--> 
+    <link rel="stylesheet" href="src/landingPage/landingPages.css">
 </head>
 <body>
     <header>
@@ -23,8 +22,8 @@
         </div>
         <!-- Desktop Nav -->
         <nav class="desktopNavButtons" id="desktopNavButtons">
-            <a href="src/LogInPage/LoginPage.php?tab=register" class="signUpButton">Sign up</a>
-            <a href="src/LogInPage/LoginPage.php" class="loginButton">Login</a>
+            <a href="src/PageSections/login.php?tab=register" class="signUpButton">Sign up</a>
+            <a href="src/PageSections/login.php" class="loginButton">Login</a>
         </nav>
 
         <!-- Phone Nav -->
@@ -35,8 +34,8 @@
 
     <!-- Phone Menu Bar -->
     <div class="phoneMenuBar" id="phoneMenuBar">
-        <a href="src/LogInPage/LoginPage.php?tab=register">Sign up</a>
-        <a href="src/LogInPage/LoginPage.php">Login</a>
+        <a href="src/PageSections/login.phptab=register">Sign up</a>
+        <a href="src/PageSections/login.php">Login</a>
     </div>
     <script src="LandingPage.js"></script>
 
@@ -46,7 +45,7 @@
             <h2 class="heroTitle">Track Your<br><span>Health & Fitness</span></h2>
             <p class="supportingText">A modern health and fitness tracking system designed for students<br>and young adults. Monitor your workouts, track your diet, and<br>achieve your wellness goals.</p>
             <div class="ctaButtons">
-                <a href="src/LogInPage/LoginPage.php" class="getStartedButton">Get Started</a>
+                <a href="src/PageSections/login.php" class="getStartedButton">Get Started</a>
                 <a class="learnMoreButton" href="#Anchor">Learn More</a>
             </div>
         
@@ -98,7 +97,7 @@
             <div class="cta-box">
                 <h2>Ready to start your Journey?</h2>
                 <p>Join hundreds of students achieving their health goals</p> <br>
-                <a href="src/LogInPage/LoginPage.php" class="getStartedButton">Get Started Now</a>
+                <a href="src/PageSections/login.php" class="getStartedButton">Get Started Now</a>
             </div>
         </div>
     </main>

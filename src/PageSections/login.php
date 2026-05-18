@@ -1,8 +1,7 @@
-<!-- Previous Login/Register -->
-
 <?php
 include("../DataBase/dataBaseConnection.php");
-
+    session_start();
+    $_SESSION['email'] = $_POST['email'] ?? '';
 $message = '';
 
 error_reporting(E_ALL);
@@ -28,13 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = "Password must be at least 6 characters.";
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users (user, email, password) VALUES (?, ?, ?)";
-            $stmt = mysqli_prepare($conn, $sql);
+            $addUser = "INSERT INTO users (user, email, password) VALUES (?, ?, ?)";
+            $userSchedule = "INSERT INTO `exerciseschedule` (`ExerciseSchedule1`, `ExerciseSchedule2`, `ExerciseSchedule3`) VALUES ('', '', '')";
+            $userCalories = "INSERT INTO `usercalories` (`Calories_Burned`, `Workout_Completed`, `Progress_Increased`, `breakfast_Calories`, `Lunch_Calories`, `Dinner_Calories`, `Monday_Total_Calories`, `Tuesday_Total_Calories`, `Wednesday_Total_Calories`, `Thursday_Total_Calories`, `Friday_Total_Calories`, `Saturday_Total_Calories`, `Sunday_Total_Calories`) VALUES (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)";
+            $stmt = mysqli_prepare($conn, $addUser);
             
             if ($stmt) {
                 mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hash);
                 try {
                     mysqli_stmt_execute($stmt);
+                    mysqli_query($conn, $userSchedule); //DEBUG: send new row in sched
+                    mysqli_query($conn, $userCalories); //DEBUG: send new row in Calories
                     $message = "Account Registered Successfully!";
                 } catch (mysqli_sql_exception $e) {
                     $message = "Error: Username or Email is already taken.";
@@ -90,12 +93,12 @@ if (isset($conn) && $conn instanceof mysqli) {
     <title>HealthLink User Authentication Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="LoginPage.css">
+    <link rel="stylesheet" href="../logInPage/LoginPage.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <div class="heart"><img src="assets/heart.png" alt="Heart Icon"></div>
+            <div class="heart"><img src="../assets/heart.png" alt="Heart Icon"></div>
             <div class="brand">Health<span class="cyan">Link</span></div>
         </div>
     </header>
@@ -110,7 +113,7 @@ if (isset($conn) && $conn instanceof mysqli) {
             <div class="boxStyle" id="boxStyle">
                 <!-- Login Form -->
                 <div id="loginForm" class="formContent">
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                    <form action="MainDashBoard.php" method="POST">
                         <input type="hidden" name="action" value="login">
                         <div class="inputGroup"><input type="text" name="email" placeholder="Username or Email" required></div>
                         <div class="inputGroup"><input type="password" name="password" placeholder="Password" required></div>
@@ -132,7 +135,16 @@ if (isset($conn) && $conn instanceof mysqli) {
             </div>
         </div>
     </div>
-
+    <footer>
+        <div>
+            <h2>HealthyLivingTeam</h2>
+        </div>
+        <div>
+            <p style="text-decoration:underline;">Contact Information</p>
+            <p>+63 947 564 6767</p>
+            <a href="mailto:HealthyLivingTeam@gmail.com" style="color: white;">HealthyLivingTeam@gmail.com</a>
+        </div>
+    </footer>
     <script>
         
         function validatePasswords() {

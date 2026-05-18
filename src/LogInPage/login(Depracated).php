@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
         <h1>Login</h1><br>
         <label for="name">Name: </label>
         <input type="text" name="Name">
