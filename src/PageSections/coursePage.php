@@ -18,7 +18,7 @@
             <a href="coursePage.php" class="Active">Courses</a>
             <a href="MainDashBoard.php">Dashboard</a>
             <a href="aboutPage.php">About</a>
-            <button class="LogOutButton">Log out</button>
+            <a class="LogOutButton" href="../../indexss.php">Log out</a>
         </nav>
 
         <!-- Phone Nav -->
