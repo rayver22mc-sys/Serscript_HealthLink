@@ -9,10 +9,12 @@
 <body>
     <header>
         <!-- Logo -->
-        <div class="logo">
-            <img src="../assets/heart.png" alt="Heart Icon">
-            <p>Health<span style="color: #0CEFEA;">Link</span></p>
-        </div>
+        <a href="MainDashBoard.php" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <img src="../assets/heart.png" alt="Heart Icon">
+                <p>Health<span></span><span style="color: #0CEFEA;">Link</span></p>
+            </div>
+        </a>
         <!-- Desktop Nav -->
         <nav class="desktopNavButtons" id="desktopNavButtons">
             <a href="coursePage.php" class="Active">Articles</a>
