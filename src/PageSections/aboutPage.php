@@ -32,7 +32,7 @@
 
     <!-- Phone Menu Bar -->
     <div class="phoneMenuBar" id="phoneMenuBar">
-        <a href="coursePage.php" class="Active">Courses</a>
+        <a href="coursePage.php" class="Active">Articles</a>
         <a href="MainDashBoard.php">Dashboard</a>
         <a href="aboutPage.php">About</a>
         <a href="../../indexss.php">Logout</a>
