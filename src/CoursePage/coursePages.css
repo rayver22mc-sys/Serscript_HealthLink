@@ -27,15 +27,6 @@ main {
     padding: 0px 30px;
     }
 
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #062B3C;
-    margin-top: 80px;
-    padding: 60px 50px;
-    }
-
 /* Logo */
 .logo {
     
@@ -59,13 +50,15 @@ footer{
     margin-left: 40px; 
     margin-top: 10px
 }
-.roundImage{
+
+/* Round Image */
+/* .roundImage{
     margin-top: 30px;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     float: right;
-}
+} */
 
 .buttonContainer {
     margin: 120px 50px;
@@ -75,8 +68,8 @@ footer{
     font-weight: 1000;
 }
 
-
-.getStartedButton{
+/* Get Started & Learn More Button */
+/* .getStartedButton{
     background-color: #FFC800;
     color: #654300;
 }
@@ -88,55 +81,40 @@ footer{
     padding: 8px 26px;
 }
 
+
 .learnMoreButton {
     background-color: transparent;
     color: #18C6E4;
     border: #18C6E4 solid 2px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 .learnMoreButton:hover{
     background-color: #18C6E4;
     color: white;
 }
 .learnMoreButton:active {
-    padding: 8px 26px;
-}
+    transform: scale(0.95); 
+    background-color: #139cb4;
+    border-color: #139cb4;
+} */
 
-.LogOutButton{
-    background: none;
-    border: 1px solid #18C6E4;
-    border-radius: 10px;
-    font-size: 20px;
-    color: #18C6E4;
-    padding: 15px 10px;
-}
-.LogOutButton:active{
-    background-color: #18C6E4;
-    color: white;
-}
-.LogOutButton:hover{
-    cursor: pointer;
-}
 
 .coursesDiv{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
     flex-direction: row;
     place-items: center;
     margin-top: 30px;
 }
 .coursesDiv div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
     background-color: #0A242F;  
-    padding: 5px;
+    padding: 15px 5px;
     border-radius: 10px; 
-    width: 1fr;
-    height: 250px;
+    min-height: 250px; 
 }
+
 .coursesDiv div h2{
     text-align: center;
 }
@@ -144,11 +122,39 @@ footer{
     padding: 0px 40px;
     text-align: center;
 }
+
 .coursesDiv div a{
-    padding: 30px 0px;
-    padding-bottom: 0px;
+    display: inline-block;
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+.articleButton {
+    background-color: transparent;
+    color: #18C6E4;
+    border: #18C6E4 solid 2px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.articleButton:hover{
+    background-color: #18C6E4;
+    color: white;
+}
+.articleButton:active {
+    transform: scale(0.9); 
+    background-color: #139cb4;
+    border-color: #139cb4;
+}
+
+/* NEW: Make article buttons side by side */
+.coursesDiv div .button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .CoursePopUp div{
@@ -161,7 +167,47 @@ footer{
     background-color: #0A242F;
     border: 1px solid white ;  
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
+    width: 90%;         
+    max-width: 450px;   
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* NEW: Popup button group – Close and Learn More side by side */
+.CoursePopUp div .popup-button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* NEW: Style both popup buttons */
+.CoursePopUp div button {
+    background-color: transparent;
+    color: #18C6E4;
+    border: #18C6E4 solid 2px;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.CoursePopUp div button:hover {
+    background-color: #18C6E4;
+    color: white;
+}
+
+/* NEW: Distinct style for the Learn More button inside popup */
+.CoursePopUp div .popup-learn-more {
+    background-color: #FFC800;
+    color: #654300;
+    border-color: #FFC800;
+}
+
+.CoursePopUp div .popup-learn-more:hover {
+    background-color: #e6b400;
+    color: white;
 }
 
 /* filter */
@@ -172,9 +218,7 @@ footer{
     float: left;
     background-color: #0A242F;
     padding: 10px;
-    padding-right: 20px;
     border-radius: 15px;
-
 }
 .desktopFilterSection button{
     border: none;
@@ -218,10 +262,6 @@ footer{
     background-color: #083C52;
     border-radius: 10px;
 }
-
-
-
-
 
 /* phone */
 #phoneNavButton{
@@ -292,5 +332,15 @@ footer{
     .coursesDiv{
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+    /*Prevents button overflow*/
+    .coursesDiv div span {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 10px;
+    }
+    .learnMoreButton {
+        padding: 8px 12px; 
+        font-size: 14px;
     }
 }
