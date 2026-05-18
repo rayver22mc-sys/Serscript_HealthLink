@@ -21,7 +21,7 @@
             <a href="coursePage.php">Courses</a>
             <a href="MainDashBoard.php">Dashboard</a>
             <a href="aboutPage.php" class="Active">About</a>
-            <button class="LogOutButton">Log out</button>
+            <a class="LogOutButton" href="../../indexss.php">Log out</a>
         </nav>
 
         <!-- Phone Nav -->
@@ -35,7 +35,7 @@
         <a href="coursePage.php" class="Active">Courses</a>
         <a href="MainDashBoard.php">Dashboard</a>
         <a href="aboutPage.php">About</a>
-        <a href="">Logout</a>
+        <a href="../../indexss.php">Logout</a>
     </div>
 
 
