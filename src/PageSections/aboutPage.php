@@ -32,12 +32,11 @@
 
     <!-- Phone Menu Bar -->
     <div class="phoneMenuBar" id="phoneMenuBar">
-        <a href="coursePage.php">Courses</a>
+        <a href="coursePage.php" class="Active">Articles</a>
         <a href="MainDashBoard.php">Dashboard</a>
         <a href="aboutPage.php" class="Active">About</a>
         <a href="../../indexss.php">Logout</a>
     </div>
-
 
     <div class="section1">
         <h1>About Us</h1>
@@ -56,7 +55,7 @@
             </div>
         </div>
         <div>
-            <img src="../assets/Hamsirani_ProfilePicture.jpg" alt="An image of Rayver Hamsirani" height="350px" >
+            <img src="../assets/Ku_ProfilePicture.jpeg" alt="An image of Rayver Hamsirani" height="350px" width="350px" >
             <div>
                 <h2>Beatriz Mae Ku</h2>
                 <p>Full stack Developer</p>
@@ -76,7 +75,16 @@
                 <p>Full stack Developer</p>
             </div>
         </div>
+        <br>
     </section>
+    
+    <div style="background-color:#062B3C; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 300px;" class="section1">
+        <h1>Our Mission</h1>
+    </div >
+    <div column; justify-content: center; align-items: center; height: 300px;>
+        <p style="text-align: center; font-size: 30px;"><br><br>To empower users to take control of their physical and mental health through a user-friendly, one platform open‑source <br> web system to schedule exercises, view previous exercises, and browse credible health related articles.</p>
+    </div>
+    
     <footer>
         <div>
             <h2>HealthyLivingTeam</h2>

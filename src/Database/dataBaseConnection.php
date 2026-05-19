@@ -3,7 +3,7 @@
 $db_Server = "localhost";
 $db_user = "root";
 $db_pass = "";
-$db_name = "doubledisasterdb1.0";   
+$db_name = "users";   
 
 $conn = null;  // initialize
 

@@ -77,7 +77,7 @@
     
         <nav>
             <div style="display:flex;">
-                <a class="desktopNavButton" href="CoursePage.php">Course</a>
+                <a class="desktopNavButton" href="CoursePage.php">Articles</a>
                 <a class="desktopNavButton" href="mainDashBoard.php" id="active">Dashboard</a>
                 <a class="desktopNavButton" href="aboutPage.php">About</a>
                 <a class="LogOutButton" href="../../indexss.php">Log out</a>
