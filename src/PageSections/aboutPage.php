@@ -34,7 +34,7 @@
     <div class="phoneMenuBar" id="phoneMenuBar">
         <a href="coursePage.php" class="Active">Articles</a>
         <a href="MainDashBoard.php">Dashboard</a>
-        <a href="aboutPage.php">About</a>
+        <a href="aboutPage.php" class="Active">About</a>
         <a href="../../indexss.php">Logout</a>
     </div>
 
@@ -42,8 +42,8 @@
         <h1>About Us</h1>
     </div >
 
-    <div style="background-color:#062B3C; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 300px;">
-        <p style="text-align: center; font-size: 30px;">A team of four developers willing to learn and develop systems for minor shops to major companies, providing them <br> with a well-designed web application that is responsive and easy for new users to understand.</p>
+    <div class="aboutUsText">
+        <p>A team of four developers willing to learn and develop systems for minor shops to major companies, providing them with a well-designed web application that is responsive and easy for new users to understand.</p>
     </div>
 
     <section class="userProfilesDiv">
@@ -89,7 +89,7 @@
         <div>
             <h2>HealthyLivingTeam</h2>
         </div>
-        <div>
+        <div class="contactInfo">
             <p style="text-decoration:underline;">Contact Information</p>
             <p>+63 947 564 6767</p>
             <a href="mailto:HealthyLivingTeam@gmail.com" style="color: white;">HealthyLivingTeam@gmail.com</a>

@@ -134,6 +134,19 @@ footer{
     background-color: #083C52;
     border-radius: 10px;
 }
+.aboutUsText{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+
+    background-color:#062B3C; 
+    height: 300px;
+}
+.aboutUsText p{
+    text-align: center; 
+    font-size: 30px;
+}
 
 
 
@@ -180,4 +193,86 @@ footer{
 
     main{padding: 0px; margin: 0px  ;}
     
+
+    .section1{
+        height: 150px;
+    }
+    .section1 h1{
+        font-size: 35px;
+    }
+    .aboutUsText {
+        height: 250px;
+    }
+    .aboutUsText p{
+        padding: 10px;
+        text-justify:   inter-word;
+        font-size: 15px;
+    }
+
+    .userProfilesDiv{
+        grid-template-columns: repeat(1, 1fr);
+        margin: 10px;
+    }
+
+    .userProfilesDiv div{
+        width: 100%;
+    }
+    .userProfilesDiv>div>div{
+    padding: 10px;
 }
+
+    .userProfilesDiv div div h2{
+    font-size: 10px;
+    }
+    .userProfilesDiv div div p{
+    font-size: 8px;
+    }
+
+    .userProfilesDiv img{
+        height: 100px;
+        margin: 10px;
+        border-radius: 50%;
+    }
+    footer{
+        display: block;
+        padding: 20px;
+    }
+    footer h2{
+        font-size: 20px;
+    }e
+    .contactInfo p, .contactInfo a{
+        font-size: 10px;
+    }
+}
+
+/* .userProfilesDiv{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    flex-direction: row;
+    place-items: center;
+    margin-top: 30px;
+    padding: 0px 20px;
+}
+    .userProfilesDiv div{
+    display: flex;
+    background-color: rgba(6, 182, 212, 40%);
+    width: 800px;
+}
+
+.userProfilesDiv>div>div{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+.userProfilesDiv img{
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.userProfilesDiv div div h2{
+    padding: 0px;
+    margin: 0px;
+} */

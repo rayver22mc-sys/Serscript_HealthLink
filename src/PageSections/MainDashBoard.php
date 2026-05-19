@@ -81,18 +81,20 @@
                 <a class="desktopNavButton" href="mainDashBoard.php" id="active">Dashboard</a>
                 <a class="desktopNavButton" href="aboutPage.php">About</a>
                 <a class="LogOutButton" href="../../indexss.php">Log out</a>
-
-
-                <button class="phoneNavButton" onclick="phoneMenuToggle()" id="menuButton">☰</button>
-                <div style="float: right; position: absolute; background-color: black; padding:0px; margin: 0px; display:none;" id="phoneMenuBar">
-                    <a class="phoneNavButton" onclick="phoneMenuToggle()">Close</a>
-                    <a class="phoneNavButton" href="coursePage.php">Course</a>
-                    <a class="phoneNavButton" href="MainDashBoard.php" class="active">Dashboard</a>
-                    <a class="phoneNavButton" href="aboutPage.php">About</a>
-                </div>
             </div>
         </nav>
+        <!-- Phone Nav -->
+        <div id="phoneNavButton">
+            <button style="margin:0px;" onclick="togglePhoneBar()">☰</button>
+        </div>
     </header>
+    <!-- Phone Nav Bar -->
+    <div class="phoneMenuBar" id="phoneMenuBar">
+        <a href="coursePage.php">Courses</a>
+        <a href="MainDashBoard.php" class="Active">Dashboard</a>
+        <a href="aboutPage.php">About</a>
+        <a href="../../indexss.php">Logout</a>
+    </div>
 
     <main>
         <div class="section1">
@@ -193,7 +195,7 @@
         <div>
             <h2>HealthyLivingTeam</h2>
         </div>
-        <div>
+        <div class="contactInfo">
             <p style="text-decoration:underline;">Contact Information</p>
             <p>+63 947 564 6767</p>
             <a href="mailto:HealthyLivingTeam@gmail.com" style="color: white;">HealthyLivingTeam@gmail.com</a>
@@ -247,12 +249,12 @@
             document.getElementById("totalCaloriesBar").style.width = (totalCalories/totalMaxCalories) * 100 + "%";
 
         // Phone Navigation Bar
-        function phoneMenuToggle(){
-            if(document.getElementById("phoneMenuBar").style.display === "block"){
+        function togglePhoneBar(){
+            if(document.getElementById("phoneMenuBar").style.display === "flex"){
                 document.getElementById("phoneMenuBar").style.display = "none";
             }
             else{
-                document.getElementById("phoneMenuBar").style.display = "block";
+                document.getElementById("phoneMenuBar").style.display = "flex";
             }
         }
     </script>
