@@ -32,7 +32,7 @@
         <a href="coursePage.php" class="Active">Courses</a>
         <a href="MainDashBoard.php">Dashboard</a>
         <a href="aboutPage.php">About</a>
-        <a href="">Logout</a>
+        <a href="../../indexss.php">Logout</a>
     </div>
 
     <main>

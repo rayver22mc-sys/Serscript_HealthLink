@@ -18,26 +18,23 @@
         <!-- Logo -->
         <div class="logo">
             <img src="src/assets/heart.png" alt="Heart Icon">
-            <p>Health</span><span style="color: #0CEFEA;">Link</span></p>
+            <p>Health<span style="color: #0CEFEA;">Link</span></p>
         </div>
         <!-- Desktop Nav -->
         <nav class="desktopNavButtons" id="desktopNavButtons">
             <a href="src/PageSections/login.php?tab=register" class="signUpButton">Sign up</a>
             <a href="src/PageSections/login.php" class="loginButton">Login</a>
         </nav>
-
         <!-- Phone Nav -->
         <div id="phoneNavButton">
             <button style="margin:0px;" onclick="togglePhoneBar()">☰</button>
         </div>
     </header>
-
     <!-- Phone Menu Bar -->
-    <div class="phoneMenuBar" id="phoneMenuBar" style="display: block;">
-        <a href="src/PageSections/login.phptab=register">Sign up</a>
+    <div class="phoneMenuBar" id="phoneMenuBar">
+        <a href="src/PageSections/login.php?tab=register">Sign up</a>
         <a href="src/PageSections/login.php">Login</a>
     </div>
-    <script src="LandingPage.js"></script>
 
     <main>
         <div>
@@ -101,5 +98,14 @@
             </div>
         </div>
     </main>
+    <script>
+        function togglePhoneBar(){
+            if(document.getElementById("phoneMenuBar").style.display === "flex"){
+                document.getElementById("phoneMenuBar").style.display = "none";
+            }else{
+                document.getElementById("phoneMenuBar").style.display = "flex";
+            }
+        }
+    </script>
 </body>
 </html>

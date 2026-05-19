@@ -17,12 +17,22 @@ body{
     font-style: normal;
     box-sizing: border-box;
     }
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+header {
     background-color: #062B3C;
-    padding: 15px;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    }
+.desktopNavButtons {
+    padding: 10px;
+}
+.desktopNavButtons a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0px 10px;
+    font-size: 20px;
 }
 footer{
     display: flex;
@@ -75,6 +85,22 @@ nav a#active{
 .LogOutButton:hover{
     cursor: pointer;
 }
+
+/* Logo */
+.logo {    
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    }
+.logo img{
+    height: auto;
+    display: block;
+    }
+.logo p{
+    color:white;
+    }  
 
 .section1{
     padding: 15px 10px;
@@ -219,16 +245,72 @@ nav a#active{
     }
 }
 
-/* Phone */
+/* phone */
+#phoneNavButton{
+    display: none;
+    padding: 10px;
+}
+.phoneMenuBar{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+        
+    background-color: #031D29;
+    padding: 10px;
+}
+.phoneMenuBar a {
+    text-decoration: none;
+    color: #18C6E4;
+    padding: 8px 0px;
+    font-size: 10px;
+}
+.phoneMenuBar a.Active{
+    color: white;
+    background-color: #083C52;
+    border-radius: 5px;
+}
 
-.phoneNavButton{display: none;}
+
 
 
 #menuButton{
     padding: 5px;
     margin: 0px 5px;
 }
-@media (max-width: 600px) {
-    .desktopNavButton{display:none;}
-    .phoneNavButton{display: block;}
+@media(max-width: 651px){
+    header{
+        padding: 10px 15px;
+    }
+    #desktopNavButtons{
+        display: none;
+    }
+    #phoneNavButton{
+        display: block;
+    }
+        
+    .logo img{
+        width: 40px;
+    }
+    nav{
+        display: none;
+    }
+    footer{
+        display: block;
+        padding: 20px;
+    }
+    footer h2{
+        font-size: 20px;
+    }
+    .contactInfo p, .contactInfo a{
+        font-size: 10px;
+    }
 }
+
+/* footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #062B3C;
+    margin-top: 80px;
+    padding: 60px 50px;
+    } */
