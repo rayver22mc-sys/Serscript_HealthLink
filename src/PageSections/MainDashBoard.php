@@ -4,6 +4,7 @@
     if (isset($_POST['email'])) {
         $_SESSION['email'] = $_POST['email'];
     }
+
     $user = "null";
     if (isset($_SESSION['email'])){ $user = $_SESSION['email'];}
     $currentUser = $conn->query("SELECT id FROM users WHERE user = '$user'");
@@ -18,14 +19,61 @@
     $breakfastCalories = $row2["breakfast_Calories"];
     $lunchCalories = $row2["Lunch_Calories"];
     $dinnerCalories = $row2["Dinner_Calories"];
+    $mondayTotalCalories = $row2["Monday_Total_Calories"];
+    $tuesdayTotalCalories = $row2["Tuesday_Total_Calories"];
+    $wednesdayTotalCalories = $row2["Wednesday_Total_Calories"];
+    $thursdayTotalCalories = $row2["Thursday_Total_Calories"];
+    $fridayTotalCalories = $row2["Friday_Total_Calories"];
+    $saturdayTotalCalories = $row2["Saturday_Total_Calories"];
+    $sundayTotalCalories = $row2["Sunday_Total_Calories"];
 
     $caloriesInput = '';
+
         if (isset($_POST['breakFastCaloriesSubmitBtn'])) {
             if($_POST['calorieInput'] <0){header("Location: MainDashBoard.php");}
             else{
                 $caloriesInput = (int)$breakfastCalories + (int)$_POST['calorieInput'];
                 $breakfastCalorieUpdate = "UPDATE `usercalories` SET `breakfast_Calories` = '$caloriesInput' WHERE `usercalories`.`id` = '$id'";
                 mysqli_query($conn, $breakfastCalorieUpdate);
+
+                $Day = date("l");
+                switch($Day){
+                    case 'Monday':
+                        $mondayTotalCaloriesUpdate = (int)$mondayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Monday_Total_Calories` = '$mondayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Tuesday':
+                        $tuesdayTotalCaloriesUpdate = (int)$tuesdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Tuesday_Total_Calories` = '$tuesdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Wednesday':
+                        $wednesdayTotalCaloriesUpdate = (int)$wednesdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Wednesday_Total_Calories` = '$wednesdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Thursday':
+                        $thursdayTotalCaloriesUpdate = (int)$thursdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Thursday_Total_Calories` = '$thursdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Friday':
+                        $fridayTotalCaloriesUpdate = (int)$fridayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Friday_Total_Calories` = '$fridayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Saturday':
+                        $saturdayTotalCaloriesUpdate = (int)$saturdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Saturday_Total_Calories` = '$saturdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Sunday':
+                        $sundayTotalCaloriesUpdate = (int)$sundayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Sunday_Total_Calories` = '$sundayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                }
             }
             header("Location: MainDashBoard.php");
             exit();
@@ -37,6 +85,45 @@
                 $caloriesInput = (int)$lunchCalories + (int)$_POST['calorieInput'];
                 $lunchCalorieUpdate = "UPDATE `usercalories` SET `lunch_Calories` = '$caloriesInput' WHERE `usercalories`.`id` = '$id'";
                 mysqli_query($conn, $lunchCalorieUpdate);
+
+                $Day = date("l");
+                switch($Day){
+                    case 'Monday':
+                        $mondayTotalCaloriesUpdate = (int)$mondayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Monday_Total_Calories` = '$mondayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Tuesday':
+                        $tuesdayTotalCaloriesUpdate = (int)$tuesdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Tuesday_Total_Calories` = '$tuesdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Wednesday':
+                        $wednesdayTotalCaloriesUpdate = (int)$wednesdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Wednesday_Total_Calories` = '$wednesdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Thursday':
+                        $thursdayTotalCaloriesUpdate = (int)$thursdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Thursday_Total_Calories` = '$thursdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Friday':
+                        $fridayTotalCaloriesUpdate = (int)$fridayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Friday_Total_Calories` = '$fridayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Saturday':
+                        $saturdayTotalCaloriesUpdate = (int)$saturdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Saturday_Total_Calories` = '$saturdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Sunday':
+                        $sundayTotalCaloriesUpdate = (int)$sundayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Sunday_Total_Calories` = '$sundayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                }
             }
             header("Location: MainDashBoard.php");
             exit();
@@ -48,7 +135,200 @@
                 $caloriesInput = (int)$dinnerCalories + (int)$_POST['calorieInput'];
                 $dinnerCalorieUpdate = "UPDATE `usercalories` SET `dinner_Calories` = '$caloriesInput' WHERE `usercalories`.`id` = '$id'";
                 mysqli_query($conn, $dinnerCalorieUpdate);
+
+                $Day = date("l");
+                switch($Day){
+                    case 'Monday':
+                        $mondayTotalCaloriesUpdate = (int)$mondayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Monday_Total_Calories` = '$mondayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Tuesday':
+                        $tuesdayTotalCaloriesUpdate = (int)$tuesdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Tuesday_Total_Calories` = '$tuesdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Wednesday':
+                        $wednesdayTotalCaloriesUpdate = (int)$wednesdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Wednesday_Total_Calories` = '$wednesdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Thursday':
+                        $thursdayTotalCaloriesUpdate = (int)$thursdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Thursday_Total_Calories` = '$thursdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Friday':
+                        $fridayTotalCaloriesUpdate = (int)$fridayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Friday_Total_Calories` = '$fridayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Saturday':
+                        $saturdayTotalCaloriesUpdate = (int)$saturdayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Saturday_Total_Calories` = '$saturdayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                    case 'Sunday':
+                        $sundayTotalCaloriesUpdate = (int)$sundayTotalCalories + (int)$_POST['calorieInput'];
+                        $Update = "UPDATE `usercalories` SET `Sunday_Total_Calories` = '$sundayTotalCaloriesUpdate' WHERE `usercalories`.`id` = '$id'";
+                        mysqli_query($conn, $Update);
+                        break;
+                }
             }
+            header("Location: MainDashBoard.php");
+            exit();
+        }
+
+        // Scheduler
+        if (isset($_POST['schedule1'])) {
+            $caloriesInput = (int)$dinnerCalories + (int)$_POST['calorieInput'];
+            $dinnerCalorieUpdate = "UPDATE `usercalories` SET `dinner_Calories` = '$caloriesInput' WHERE `usercalories`.`id` = '$id'";
+            mysqli_query($conn, $dinnerCalorieUpdate);
+            header("Location: MainDashBoard.php");
+            exit();
+            }
+
+        $schedule = $conn->query("SELECT * FROM exerciseschedule WHERE id = '$id'");
+        $scheduleRow = $schedule->fetch_assoc();
+
+        
+        $schedule1Input = $scheduleRow['ExerciseSchedule1'];
+        $schedule2Input = $scheduleRow['ExerciseSchedule2'];
+        $schedule3Input = $scheduleRow['ExerciseSchedule3'];
+
+        $schedule1Input = $scheduleRow['ExerciseSchedule1'];
+        $schedule2Input = $scheduleRow['ExerciseSchedule2'];
+        $schedule3Input = $scheduleRow['ExerciseSchedule3'];
+        
+        $schedule1Time = $scheduleRow['schedule1Time'];
+        $schedule2Time = $scheduleRow['schedule2Time'];
+        $schedule3Time = $scheduleRow['schedule3Time']; 
+
+        $schedule1Duration = $scheduleRow['schedule1Duration'];
+        $schedule2Duration = $scheduleRow['schedule2Duration'];
+        $schedule3Duration = $scheduleRow['schedule3Duration'];
+        
+        $ExerciseSchedule1Status = $scheduleRow['ExerciseSchedule1Status'];
+        $ExerciseSchedule2Status = $scheduleRow['ExerciseSchedule2Status'];
+        $ExerciseSchedule2Status = $scheduleRow['ExerciseSchedule2Status'];
+
+        $schedule1Status = empty($schedule1Input) ? 'flex' : 'none';
+        $schedule2Status = empty($schedule2Input) ? 'flex' : 'none';
+        $schedule3Status = empty($schedule3Input) ? 'flex' : 'none';
+
+        if (isset($_POST['Add1'])){
+            $task = $_POST['TaskInput1'];
+            $schedule1Time = $_POST['schedule1Time'];
+            $schedule1Duration = $_POST['schedule1Duration'];
+
+            $exerciseUpdate = "UPDATE `exerciseschedule` SET `ExerciseSchedule1` = '$task' WHERE `id` = '$id'";
+            $exerciseStatus = "UPDATE `exerciseschedule` SET `ExerciseSchedule1status` = 'Pending' WHERE `id` = '$id'";
+            $exerciseTime = "UPDATE `exerciseschedule` SET `schedule1Time` = '$schedule1Time' WHERE `id` = '$id'";
+            $exerciseDuration = "UPDATE `exerciseschedule` SET `schedule1Duration` = '$schedule1Duration' WHERE `id` = '$id'";
+            mysqli_query($conn, $exerciseUpdate);
+            mysqli_query($conn, $exerciseStatus);
+            mysqli_query($conn, $exerciseTime);
+            mysqli_query($conn, $exerciseDuration);
+            header("Location: MainDashBoard.php");
+            exit();
+        }
+        if (isset($_POST['Add2'])){
+            $task2 = $_POST['TaskInput2'];
+            $schedule2Time = $_POST['schedule2Time'];
+            $schedule2Duration = $_POST['schedule2Duration'];
+            $exerciseUpdate2 = "UPDATE `exerciseschedule` SET `ExerciseSchedule2` = '$task2' WHERE `id` = '$id'";
+            $exerciseStatus2 = "UPDATE `exerciseschedule` SET `ExerciseSchedule2status` = 'Pending' WHERE `id` = '$id'";
+            $exerciseTime2 = "UPDATE `exerciseschedule` SET `schedule2Time` = '$schedule2Time' WHERE `id` = '$id'";
+            $exerciseDuration2 = "UPDATE `exerciseschedule` SET `schedule2Duration` = '$schedule2Duration' WHERE `id` = '$id'";
+            mysqli_query($conn, $exerciseUpdate2);
+            mysqli_query($conn, $exerciseStatus2);
+            mysqli_query($conn, $exerciseTime2);
+            mysqli_query($conn, $exerciseDuration2);
+            header("Location: MainDashBoard.php");
+            exit();
+        }
+        if (isset($_POST['Add3'])){
+            $task3 = $_POST['TaskInput3'];
+            $schedule3Time = $_POST['schedule3Time'];
+            $schedule3Duration = $_POST['schedule3Duration'];
+
+            $exerciseUpdate3 = "UPDATE `exerciseschedule` SET `ExerciseSchedule3` = '$task3' WHERE `id` = '$id'";
+            $exerciseStatus3 = "UPDATE `exerciseschedule` SET `ExerciseSchedule3status` = 'Pending' WHERE `id` = '$id'";
+            $exerciseTime3 = "UPDATE `exerciseschedule` SET `schedule3Time` = '$schedule3Time' WHERE `id` = '$id'";
+            $exerciseDuration3 = "UPDATE `exerciseschedule` SET `schedule3Duration` = '$schedule3Duration' WHERE `id` = '$id'";
+            mysqli_query($conn, $exerciseUpdate3);
+            mysqli_query($conn, $exerciseStatus3);
+            mysqli_query($conn, $exerciseTime3);
+            mysqli_query($conn, $exerciseDuration3);
+            header("Location: MainDashBoard.php");
+            exit();
+        }
+
+        
+
+        if (isset($_POST['finishTask1'])){
+            if($ExerciseSchedule1Status == 'Completed'){header("Location: MainDashBoard.php"); exit();}
+            else{
+                $updateStatus = "UPDATE `exerciseschedule` SET `ExerciseSchedule1status` = 'Completed' WHERE `id` = '$id'";
+
+                $workoutCompleted+=1;
+                $updateStatus2 = "UPDATE `usercalories` SET `Workout_Completed` = '$workoutCompleted' WHERE `usercalories`.`id` = '$id'";
+                mysqli_query($conn, $updateStatus);
+                mysqli_query($conn, $updateStatus2);
+                header("Location: MainDashBoard.php");
+                exit();
+            }
+
+            
+        }
+
+        if (isset($_POST['finishTask2'])){
+            if($ExerciseSchedule2status == 'Completed'){header("Location: MainDashBoard.php"); exit();}
+            else{
+                $updateStatus = "UPDATE `exerciseschedule` SET `ExerciseSchedule2status` = 'Completed' WHERE `id` = '$id'";
+
+                $workoutCompleted+=1;
+                $updateStatus2 = "UPDATE `usercalories` SET `Workout_Completed` = '$workoutCompleted' WHERE `usercalories`.`id` = '$id'";
+                mysqli_query($conn, $updateStatus);
+                mysqli_query($conn, $updateStatus2);
+                header("Location: MainDashBoard.php");
+                exit();
+            }
+        }
+
+        if (isset($_POST['finishTask3'])){
+            if($ExerciseSchedule3status == 'Completed'){header("Location: MainDashBoard.php"); exit();}
+            else{
+                $updateStatus = "UPDATE `exerciseschedule` SET `ExerciseSchedule3status` = 'Completed' WHERE `id` = '$id'";
+                
+                $workoutCompleted+=1;
+                $updateStatus2 = "UPDATE `usercalories` SET `Workout_Completed` = '$workoutCompleted' WHERE `usercalories`.`id` = '$id'";
+                
+                mysqli_query($conn, $updateStatus);
+                mysqli_query($conn, $updateStatus2);
+                header("Location: MainDashBoard.php");
+                exit();
+            }
+        }
+        
+
+        if (isset($_POST['deleteTask1'])){
+            $deleteTask = "UPDATE `exerciseschedule` SET `ExerciseSchedule1` = '' WHERE `id` = '$id'";
+            mysqli_query($conn, $deleteTask);
+            header("Location: MainDashBoard.php");
+            exit();
+        }
+
+    
+        if (isset($_POST['deleteTask2'])){
+            $deleteTask = "UPDATE `exerciseschedule` SET `ExerciseSchedule2` = '' WHERE `id` = '$id'";
+            mysqli_query($conn, $deleteTask);
+            header("Location: MainDashBoard.php");
+            exit();
+        }
+        if (isset($_POST['deleteTask3'])){
+            $deleteTask = "UPDATE `exerciseschedule` SET `ExerciseSchedule3` = '' WHERE `id` = '$id'";
+            mysqli_query($conn, $deleteTask);
             header("Location: MainDashBoard.php");
             exit();
         }
@@ -98,7 +378,7 @@
 
     <main>
         <div class="section1">
-            <p style="margin-bottom: 5px; font-weight: bold; font-size: 50px;">Welcome back, <?php echo $user; ?>! </p> 
+            <p style="margin-bottom: 5px; font-weight: bold; font-size: 50px;">Welcome, <?php echo $user; ?>! </p> 
             <p style="font-size: 15px;">Here's your fitness summary for today.</p>
         </div>
         <section class="row1">
@@ -132,6 +412,81 @@
         <section class="row2">
             <div class="exerciseDiv">
                 <p>Today's Exercise Schedule</p>
+
+                <div style="display:<?php echo ($schedule1Status == 'flex') ? 'flex' : 'none'?>; ">
+                    <form action="MainDashBoard.php" method="post" class="scheduleForm">
+                        <input type="text" name="TaskInput1" placeholder="Enter Task Here..." class="exerciseInput">
+                        <input type="time" name="schedule1Time" class="exerciseInput">
+                        <input type="number" name="schedule1Duration" placeholder="Insert Duration Here..." class="exerciseInput">
+                        <input type="submit" value="Add" name="Add1" class="exerciseSubmit">
+                    </form>
+                </div>
+                <div  style="display:<?php echo ($schedule1Status == 'none') ? 'flex' : 'none'; ?>; justify-content: space-between;">
+                    <div style="display: flex; flex-direction: column;">
+                        <h2><?php echo $schedule1Input; ?></h2>
+                        <p style="color: #00DAFF;"><?php echo $schedule1Time.' - '.$schedule1Duration.' min'?></p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <h2><?php echo $ExerciseSchedule1Status ?></h2>
+                        <form action="MainDashBoard.php" method="post" class="buttonsForm">
+                            <input type="submit" value="Finish Task" name="finishTask1" class="finishButton">
+                            <input type="submit" value="Delete Task" name="deleteTask1" class="deleteButton">
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <div style="display:<?php echo ($schedule2Status == 'flex') ? 'flex' : 'none'?>;">
+                    <form action="MainDashBoard.php" method="post" class="scheduleForm">
+                        <input type="text" name="TaskInput2" placeholder="Enter Task Here..." class="exerciseInput">
+                        <input type="time" name="schedule2Time" class="exerciseInput">
+                        <input type="number" name="schedule2Duration" placeholder="Insert Duration Here..."class="exerciseInput">
+                        <input type="submit" value="Add" name="Add2" class="exerciseSubmit">
+                    </form>
+                </div>
+                <div  style="display:<?php echo ($schedule2Status == 'none') ? 'flex' : 'none'; ?>; justify-content: space-between; background-color: 	rgba(41, 203, 230, 20%);">
+                    <div style="display: flex; flex-direction: column;">
+                        <h2><?php echo $schedule2Input;  ?></h2>
+                        <p style="color: #00DAFF;"><?php echo $schedule2Time.' - '.$schedule2Duration.' min'?></p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <h2><?php echo $ExerciseSchedule1Status ?></h2>
+                        <form action="MainDashBoard.php" method="post" class="buttonsForm">
+                            <input type="submit" value="Finish Task" name="finishTask2" class="finishButton">
+                            <input type="submit" value="Delete Task" name="deleteTask2" class="deleteButton">
+                        </form>
+                    </div>
+                </div>
+
+
+                <div style="display:<?php echo ($schedule3Status == 'flex') ? 'flex' : 'none'?>;">
+                    <form action="MainDashBoard.php" method="post" class="scheduleForm">
+                        <input type="text" name="TaskInput3" placeholder="Enter Task Here..." class="exerciseInput">
+                        <input type="time" name="schedule3Time" class="exerciseInput">
+                        <input type="number" name="schedule3Duration" placeholder="Insert Duration Here..." class="exerciseInput">
+                        <input type="submit" value="Add" name="Add3" class="exerciseSubmit">
+                    </form>
+                </div>
+                <div  style="display:<?php echo ($schedule3Status == 'none') ? 'flex' : 'none'; ?>; justify-content: space-between; background-color: 	rgba(41, 203, 230, 20%);">
+                    <div style="display: flex; flex-direction: column;">
+                        <h2><?php echo $schedule3Input; ?></h2>
+                        <p style="color: #00DAFF;"><?php echo $schedule3Time.' - '.$schedule3Duration.' min'?></p>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <h2><?php echo $ExerciseSchedule1Status ?></h2>
+                        <form action="MainDashBoard.php" method="post" class="buttonsForm">
+                            <input type="submit" value="Finish Task" name="finishTask3" class="finishButton">
+                            <input type="submit" value="Delete Task" name="deleteTask3" class="deleteButton">
+                        </form>
+                    </div>
+                </div>
+
+
+                
+
+
+
             </div>
 
             <div class="dietCardDiv">
@@ -263,13 +618,13 @@
 
         <script>
             //Chart
-            var mondayVal = 0;
-            var tuesdayVal = 0;
-            var wednesdayVal = 0;
-            var thursdayVal = 0;
-            var fridayVal = 0;
-            var saturdayVal = 0;
-            var sundayVal = 0;
+            var mondayVal = <?php echo $mondayTotalCalories;?>;
+            var tuesdayVal = <?php echo $tuesdayTotalCalories;?>;
+            var wednesdayVal = <?php echo $wednesdayTotalCalories;?>;
+            var thursdayVal = <?php echo $thursdayTotalCalories;?>;
+            var fridayVal = <?php echo $fridayTotalCalories;?>;
+            var saturdayVal = <?php echo $saturdayTotalCalories;?>;
+            var sundayVal = <?php echo $sundayTotalCalories;?>;
 
             const myChart = new Chart("weeklyActivityProgressChart", {
             type: 'bar',

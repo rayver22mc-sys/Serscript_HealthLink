@@ -167,12 +167,48 @@ nav a#active{
 }
 
 .exerciseDiv{
-    display: grid;
+    display: block;
     flex-grow: 1;
     flex-basis: 1fr;
     padding: 10px;
     background-color:rgba(6, 37, 42, 50%);
     border: #00DAFF solid 1px;
+}
+.exerciseDiv>div{
+    padding: 10px;
+    width: 1fr;
+    margin: 10px;
+    background-color: rgba(41, 203, 230, 20%);
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonsForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.finishButton, .deleteButton{
+    padding: 10px;
+    margin-top: 10px;
+}
+.finishButton, .deleteButton{
+    color: green;
+    font-weight: 800;
+    background-color: white;
+    border: green solid 5px;
+}
+.deleteButton{
+    color: red;
+    border: red solid 5px;
+}
+
+.scheduleForm {
+    margin: 10px;
+}
+.scheduleForm input{
+    padding: 10px;
 }
 
 .dietCardDiv{
@@ -197,14 +233,14 @@ nav a#active{
 }
 
 /* Calorie Form */
-.calorieForm input{
+.calorieForm input, .exerciseInput{
     margin-top: 10px;
     padding: 10px;
     background-color: #D9D9D9;
     border: #D9D9D9 solid 2px;
     border-radius: 5px;
     }
-.calorieForm input[type="submit"]{
+.calorieForm input[type="submit"], .exerciseSubmit{
     margin-top: 10px;
     background-color: #06B6D4;
     color: #062D3E;
@@ -306,11 +342,3 @@ nav a#active{
     }
 }
 
-/* footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #062B3C;
-    margin-top: 80px;
-    padding: 60px 50px;
-    } */

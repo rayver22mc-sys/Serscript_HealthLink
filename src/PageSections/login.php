@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     mysqli_stmt_execute($stmt);
                     mysqli_query($conn, $userSchedule); //DEBUG: send new row in sched
                     mysqli_query($conn, $userCalories); //DEBUG: send new row in Calories
-                    $message = "Account Registered Successfully!";
+                    header("src/PageSections/login.php");
                 } catch (mysqli_sql_exception $e) {
                     $message = "Error: Username or Email is already taken.";
                 }
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($row = mysqli_fetch_assoc($result)) {
                     if (password_verify($password_input, $row["password"])) {
-                        $message = "Login successful! Welcome " . htmlspecialchars($row['user']);
+                        header("Location: MainDashBoard.php");
                     } else {
                         $message = "Incorrect Password.";
                     }
@@ -113,7 +113,7 @@ if (isset($conn) && $conn instanceof mysqli) {
             <div class="boxStyle" id="boxStyle">
                 <!-- Login Form -->
                 <div id="loginForm" class="formContent">
-                    <form action="MainDashBoard.php" method="POST">
+                    <form method="POST">
                         <input type="hidden" name="action" value="login">
                         <div class="inputGroup"><input type="text" name="email" placeholder="Username or Email" required></div>
                         <div class="inputGroup"><input type="password" name="password" placeholder="Password" required></div>
