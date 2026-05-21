@@ -38,47 +38,45 @@
     </div>
 
     <main>
-        <!-- <img src="../assets/CoursePageImage.png" alt="test" class="roundImage"> -->
         <div style="display:flex; margin-top: 70px;">
             <div class="desktopFilterSection">
                 <!-- filter 1 -->
                 <button onclick="toggleFilter1()">Health </button>
                     <div class="filter1" id="filter1">
-                        <button>Health 1</button>
+                        <button onclick="toggleNutrition()" id="nutritionButton">Nutrition</button><br>
+                        <button onclick="toggleHealthCare()" id="healthCareButton">HealthCare</button>
                     </div>
 
                 <!-- filter 2 -->
                 <button onclick="toggleFilter2()">Fitness </button>
                     <div class="filter2" id="filter2">
-                        <button>Fitness 1</button>
+                        <button onclick="togglePhysicalHealth();" id="physicalHealthButton">Physical Health</button>
                     </div>
+                <button onclick="clearFilter1()">Clear Filter </button>
             </div>
             <div>
                 <h1 class="tagLine">Explore Top Articles</h1>
-                <!-- <div class="buttonContainer">
-                    <button class="getStartedButton">GET STARTED</button>
-                    <button class="learnMoreButton">LEARN MORE</button>
-                </div> -->
             </div>
         </div>
 
         <div class="mobileFilterSection">
             <!-- filter 1 -->
-            <button onclick="toggleFilter1()">Health</button>
+            <button onclick="toggleFilter1p()">Health</button>
                 <div class="filter1" id="filter1">
-                    <button>Health 1</button>
+                    <button onclick="toggleNutrition()" id="nutritionButton">Nutrition</button>
+                    <button onclick="toggleHealthCare()"id="healthCareButton">HealthCare</button>
                 </div>
 
             <!-- filter 2 -->
-            <button onclick="toggleFilter2()">Fitness</button>
-                <div class="filter2" id="filter2">
-                    <button>Fitness 1</button>
+            <button onclick="toggleFilter2p()">Fitness</button>
+                <div class="filter2" id="filterp">
+                    <button onclick="togglePhysicalHealth();" style="display: block;">Physical Health</button>
                 </div>
         </div>
 
         <div class="coursesDiv">
             <!-- Course Row 1 -->
-            <div>
+            <div class="PhysicalHealth">
                 <h2>Importance of Physical Activity</h2>
                 <p>Physical activity is essential for maintaining overall health and preventing disease. The CDC provides guidance on how regular movement improves well-being.</p>
                 <button onclick="togglePopUp(1)">View Details</button>
@@ -102,86 +100,86 @@
                 <p>A healthy lifestyle includes both proper nutrition and regular fitness. The HHS provides strategies for maintaining overall health and well-being.</p>
                 <button onclick="togglePopUp(4)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Promoting Wellness Through Nutrition and Activity</h2>
                 <p>Nutrition and physical activity are key components of overall wellness. This resource highlights their importance in daily life.</p>
                 <button onclick="togglePopUp(5)">View Details</button>
             </div>
-            <div>
+            <div class="PhysicalHealth">
                 <h2>Achieving a Healthy Weight</h2>
                 <p>Maintaining a healthy weight is important for overall health. The CDC explains how nutrition and activity contribute to weight management.</p>
                 <button onclick="togglePopUp(6)">View Details</button>
             </div>
 
             <!-- Course Row 3 -->
-            <div>
+            <div class="Nutrition">
                 <h2>Nutrition Guidelines in Food Services</h2>
                 <p>Nutrition guidelines help improve food choices in various settings. The CDC promotes healthier food environments through these standards.</p>
                 <button onclick="togglePopUp(7)">View Details</button>
             </div>
-            <div>
+            <div class="Nutrition">
                 <h2>Reliable Nutrition Information</h2>
                 <p>Nutrition.gov provides trusted information on healthy eating and nutrition. It serves as a guide for making informed dietary choices.</p>
                 <button onclick="togglePopUp(8)">View Details</button>
             </div>
-            <div>
+            <div class="PhysicalHealth">
                 <h2>Understanding Nutrition and Weight Status</h2>
                 <p>This resource explains how nutrition and physical activity influence weight and health. The CDC provides key indicators related to these factors.</p>
                 <button onclick="togglePopUp(9)">View Details</button>
             </div>
-            <div>
+            <div class="Nutrition">
                 <h2>Dietary Guidelines for Healthy Living</h2>
                 <p>The Dietary Guidelines provide science-based advice on what to eat for good health. They help individuals make informed food choices.</p>
                 <button onclick="togglePopUp(10)">View Details</button>
             </div>
 
             <!-- Course Row 4 -->
-            <div>
+            <div class="HealthCare">
                 <h2>Sleeping Well for Better Health</h2>
                 <p>Sleeping well is essential for maintaining both physical and mental health. The CDC provides guidance on how good sleep habits can improve overall well-being and daily functioning.</p>
                 <button onclick="togglePopUp(11)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Understanding the Importance of Sleep</h2>
                 <p>Sleep is a basic human need that affects nearly every aspect of health. The CDC explains how sleep supports body functions and why it should be prioritized.</p>
                 <button onclick="togglePopUp(12)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Sleep Statistics in Adults</h2>
                 <p>Sleep data from the CDC highlights how much sleep adults get and its impact on health. These statistics show trends and concerns related to sleep patterns.</p>
                 <button onclick="togglePopUp(13)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Youth High-Risk Drug Use</h2>
                 <p>High-risk drug use among youth can lead to serious health and social consequences. The CDC provides insights into the causes and effects of substance use in young people.</p>
                 <button onclick="togglePopUp(14)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Overdose Prevention and Community Engagement</h2>
                 <p>The ENGAGE toolkit supports communities in preventing drug overdoses through collaboration and education. It provides resources for building effective partnerships.</p>
                 <button onclick="togglePopUp(15)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Building Drug-Free Communities</h2>
                 <p>The Drug-Free Communities program helps reduce substance use through community-driven strategies. It empowers local groups to create safer environments.</p>
                 <button onclick="togglePopUp(16)">View Details</button>
             </div>
-            <div>
+            <div class="HealthCare">
                 <h2>Mental Health and Substance Use Disorders</h2>
                 <p>Co-occurring disorders refer to the presence of both mental health and substance use conditions. SAMHSA explains how these conditions interact and affect individuals.</p>
                 <button onclick="togglePopUp(17)">View Details</button>
             </div>
-            <div>
+            <div class="PhysicalHealth">
                 <h2>Meeting Physical Activity Recommendations</h2>
                 <p>Regular physical activity is essential for maintaining good health. The CDC outlines recommended guidelines to help individuals stay active and reduce health risks.</p>
                 <button onclick="togglePopUp(18)">View Details</button>
             </div>
-            <div>
+            <div class="PhysicalHealth">
                 <h2>Incorporating Physical Activity into Daily Life</h2>
                 <p>Adding physical activity into a busy schedule can be simple and manageable. The CDC provides practical ways for adults to stay active every day.</p>
                 <button onclick="togglePopUp(19)">View Details</button>
             </div>
-            <div>
+            <div class="PhysicalHealth">
                 <h2>The Importance of Physical Activity</h2>
                 <p>Physical activity plays a key role in improving overall health and preventing diseases. The WHO highlights its global importance for all age groups.</p>
                 <button onclick="togglePopUp(20)">View Details</button>

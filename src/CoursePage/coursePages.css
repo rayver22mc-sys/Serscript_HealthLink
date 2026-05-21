@@ -51,15 +51,6 @@ main {
     margin-top: 10px
 }
 
-/* Round Image */
-/* .roundImage{
-    margin-top: 30px;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    float: right;
-} */
-
 .buttonContainer {
     margin: 120px 50px;
 }
@@ -68,37 +59,6 @@ main {
     font-weight: 1000;
 }
 
-/* Get Started & Learn More Button */
-/* .getStartedButton{
-    background-color: #FFC800;
-    color: #654300;
-}
-.getStartedButton:hover{
-    border: #FFC800 solid 2px;
-    color: white;
-}
-.getStartedButton:active{
-    padding: 8px 26px;
-}
-
-
-.learnMoreButton {
-    background-color: transparent;
-    color: #18C6E4;
-    border: #18C6E4 solid 2px;
-    padding: 8px 18px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-.learnMoreButton:hover{
-    background-color: #18C6E4;
-    color: white;
-}
-.learnMoreButton:active {
-    transform: scale(0.95); 
-    background-color: #139cb4;
-    border-color: #139cb4;
-} */
 
 
 .coursesDiv{
@@ -109,10 +69,13 @@ main {
     margin-top: 30px;
 }
 .coursesDiv div{
+    display: flex;
+    flex-direction: column;
     background-color: #0A242F;  
     padding: 15px 5px;
     border-radius: 10px; 
     min-height: 250px; 
+    margin: 10px;
 }
 
 .coursesDiv div h2{
@@ -123,7 +86,7 @@ main {
     text-align: center;
 }
 
-.coursesDiv div a{
+.coursesDiv div button{
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -246,6 +209,15 @@ main {
 }
 
 /* Desktop */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #062B3C;
+    margin-top: 80px;
+    padding: 60px 50px;
+    }
+
 .desktopNavButtons {
     padding: 10px;
 }
@@ -309,6 +281,14 @@ main {
         width: 40px;
     }
 
+    footer{
+        display: block;
+        padding: 20px;
+    }
+    footer h2{
+        font-size: 20px;
+    }
+    
     /* Main */
     .roundImage{display: none;}
     .desktopFilterSection{display: none;}
@@ -330,7 +310,7 @@ main {
         display: flex;
     }
     .coursesDiv{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
     /*Prevents button overflow*/

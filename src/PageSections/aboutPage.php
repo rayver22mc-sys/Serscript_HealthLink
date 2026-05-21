@@ -18,7 +18,7 @@
         </div>
         <!-- Desktop Nav -->
         <nav class="desktopNavButtons" id="desktopNavButtons">
-            <a href="coursePage.php">Courses</a>
+            <a href="coursePage.php">Articles</a>
             <a href="MainDashBoard.php">Dashboard</a>
             <a href="aboutPage.php" class="Active">About</a>
             <a class="LogOutButton" href="../../indexss.php">Log out</a>
@@ -52,27 +52,37 @@
             <div>
                 <h2>Rayver Saavedra Hamsirani</h2>
                 <p>Full stack Developer</p>
+                <p>A full stack developer dedicated in developing responsive, secured, and user-friendly web-based systems.</p>
+                <p>Uses: <br> HTML, CSS, PHP, MYSQL</p>
+                <p>Contact Information <br> Rayver22@gmail.com <br> +63 0916 673 4866</p>
             </div>
         </div>
         <div>
-            <img src="../assets/Ku_ProfilePicture.jpeg" alt="An image of Rayver Hamsirani" height="350px" width="350px" >
+            <img src="../assets/Ku_ProfilePicture.jpg" alt="An image of Beatriz Mae Ku" height="350px" width="350px" >
             <div>
                 <h2>Beatriz Mae Ku</h2>
                 <p>Full stack Developer</p>
+                <p>A compassionate websystem development team leader who wants to help the team grow into professionals.</p>
+                <p>Uses: <br> HTML, CSS, PHP, MYSQL</p>
+                <p>Contact Information <br> MaeMae67@gmail.com <br> +63 0967 687 5384</p>
             </div>
         </div>
         <div>
-            <img src="../assets/Hamsirani_ProfilePicture.jpg" alt="An image of Rayver Hamsirani" height="350px" >
+            <img src="../assets/Honrado_PFP.png" alt="An image of Justine Honrado" height="350px" >
             <div>
                 <h2>Justine Honrado</h2>
                 <p>Designer</p>
+                <p>A creative UI designer with a goal to provide developers a well-designed that is appealing and is user-friendly</p>
+                <p>Contact Information <br> JustineRadan@gmail.com <br> +63 092 911 6475</p>
             </div>
         </div>
         <div>
-            <img src="../assets/Hamsirani_ProfilePicture.jpg" alt="An image of Rayver Hamsirani" height="350px" >
+            <img src="../assets/Vitug_PFP.png" alt="An image of Anthony Gabriel Limba Vitug" height="350px" >
             <div>
                 <h2>Anthony Gabriel Limba Vitug</h2>
                 <p>Full stack Developer</p>
+                <p>An innovative designer focused on creating clean, functional, and pleasing pages.</p>
+                <p>Contact Information <br> AGLS@gmail.com <br> +63 0987 657 1582</p>
             </div>
         </div>
         <br>

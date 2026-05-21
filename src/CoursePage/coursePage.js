@@ -13,12 +13,61 @@ function toggleFilter1(){
         document.getElementById("filter1").style.display = "block";
     }
 }
+
 function toggleFilter2(){
     if(document.getElementById("filter2").style.display === "block"){
         document.getElementById("filter2").style.display = "none";
     }else{
         document.getElementById("filter2").style.display = "block";
     }
+}
+
+
+function toggleHealthCare() {
+    document.querySelectorAll(".HealthCare").forEach(el => {
+        el.style.display = "flex";
+    });
+    document.querySelectorAll(".Nutrition").forEach(el => {
+        el.style.display = "none";
+    });
+    document.querySelectorAll(".PhysicalHealth").forEach(el => {
+        el.style.display = "none";
+    });
+}
+
+function toggleNutrition() {
+    document.querySelectorAll(".Nutrition").forEach(el => {
+        el.style.display = "flex";
+    });
+    document.querySelectorAll(".HealthCare").forEach(el => {
+        el.style.display = "none";
+    });
+    document.querySelectorAll(".PhysicalHealth").forEach(el => {
+        el.style.display = "none";
+    });
+}
+function togglePhysicalHealth() {
+    document.querySelectorAll(".PhysicalHealth").forEach(el => {
+        el.style.display = "flex";
+    });
+    document.querySelectorAll(".Nutrition").forEach(el => {
+        el.style.display = "none";
+    });
+    document.querySelectorAll(".HealthCare").forEach(el => {
+        el.style.display = "none";
+    });
+}
+
+function clearFilter1() {
+    document.querySelectorAll(".Nutrition").forEach(el => {
+        el.style.display = "flex";
+    });
+    document.querySelectorAll(".PhysicalHealth").forEach(el => {
+        el.style.display = "flex";
+    });
+    document.querySelectorAll(".HealthCare").forEach(el => {
+        el.style.display = "flex";
+    });
 }
 
 // mobile
@@ -270,3 +319,8 @@ function CloseTogglePopUp(courseNum){
             break;
     }
 }
+
+
+// NUTRITION
+// HealthCare
+// PhysicalHealth
